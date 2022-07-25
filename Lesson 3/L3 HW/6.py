@@ -24,10 +24,10 @@ while (True):
     tmp = input("Введите слово >> ")
     print(int_func(tmp))
 
-    tmp = input("Введите несколько слов через пробел >> ")
+    tmp = input("Введите несколько слов через пробел >> ").split(" ")
     tmp_str = []
 
-    for i in tmp.split(" "):
+    for i in tmp:
         tmp_str.append(int_func(i))
 
     tmp = " ".join(tmp_str)

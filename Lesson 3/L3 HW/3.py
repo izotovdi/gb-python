@@ -11,19 +11,17 @@ def my_func(a, b, c):
     :param c: Аргумент 3
     :return:
     """
-    tmp = [a, b, c]
-    top, down = a, a
+    a = int(a)
+    b = int(b)
+    c = int(c)
 
-    for i in tmp:
-        if i > top:
-            top = i
-        if i < down:
-            down = i
+    print(f"Вы ввели : {a} | {b} | {c}")
 
-    summa = top + down
-    print(f"{top} + {down} = {summa}")
-
+    tmp = sorted([a, b, c], reverse=True)
+    summa = tmp[0] + tmp[1]
+    print(f"Сумма двух наибольших элементов {tmp[0]} и {tmp[1]} равна {summa}")
     return summa
 
 
-print("Функция возвращает значение : ", my_func(a=2, b=10, c=12))
+user_numbers = (input("Введите три числа через пробел >>> ")).split(" ")
+my_func(user_numbers[0], user_numbers[1], user_numbers[2])
