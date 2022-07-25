@@ -9,27 +9,26 @@
 
 def int_func(arg_1):
     """
-    Функция принимает слово или строку переводит каждое слово с заглавной буквы
+    Функция принимает слово из маленьких латинских букв и возвращающую его же, но с прописной первой буквой
 
     (string) -> string
 
     :param arg_1: string
     :return: string
     """
-    if len(arg_1.split(" ")) == 1:
-        print("Вывод слова скорректирован")
-        arg_1 = arg_1.capitalize()
-    else:
-        print("Вывод строки скорректирован")
-        arg_1 = arg_1.title()
-
+    arg_1 = arg_1.capitalize()
     return arg_1
 
 
 while (True):
-    tmp = input("Введите слово или строку для выхода введите число >>")
-    if tmp.isdigit():
-        print("работа программы завершена")
-        break
-
+    tmp = input("Введите слово >> ")
     print(int_func(tmp))
+
+    tmp = input("Введите несколько слов через пробел >> ")
+    tmp_str = []
+
+    for i in tmp.split(" "):
+        tmp_str.append(int_func(i))
+
+    tmp = " ".join(tmp_str)
+    print(tmp)
